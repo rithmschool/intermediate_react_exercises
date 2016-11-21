@@ -7,8 +7,7 @@
 - [03 Webpack](./Unit-01/03-webpack/readme.md)
 - [04 Props and State](./Unit-01/04-props-state/readme.md)
 - [05 Events](./Unit-01/05-events/readme.md)
-- [06 Refs and Forms](./Unit-01/06-refs/readme.md)
-- [07 React Life Cycle](./Unit-01/07-lifecycle/readme.md)
+- [06 React Life Cycle](./Unit-01/06-lifecycle/readme.md)
 
 ### Unit 2 - React Router / Redux / React Native
 
