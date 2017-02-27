@@ -2,7 +2,7 @@
 
 ### Part 1
 
-Refactor your previous example to use JSX. Your three components should not use any syntax like `React.DOM.h1` and should use babel to transpile
+Refactor your previous example to use JSX. Your three components should not use any syntax like `React.DOM.h1` and should use babel to transpile.
 
 ### Part 2
 
