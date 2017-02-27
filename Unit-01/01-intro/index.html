@@ -1,0 +1,45 @@
+<!-- For this assignment you will be creating three components
+
+FirstComponent which is an h1 with the text "My very first component"
+SecondComponent which is an h2 with the text "My second component"
+NamedComponent which is a p that should accept a property of "name" and display the text "My name is " + name. Research props and how you can dynamically pass properties to your components
+All of your components should be created with pure JavaScript and HTML. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>React 1</title>
+</head>
+<body>
+	<div id='app'></div>
+	<script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+    <script>
+    var root = React.DOM.div
+    var h1 = React.DOM.h1;
+    var h2 = React.DOM.h2;
+    var NamedComponent = React.createClass({
+    	render: function(){
+    		return (
+    			h1(null, "My name is " + this.props.name + ".")
+    			)
+    	}
+    })
+
+        var App = (
+        	root({id:'root'},
+        	h1(null, 'My very first component'),
+        	h2(null, 'My second component'),
+        	React.createElement(NamedComponent, {name:'Trump the Dump'}),
+        	React.createElement(NamedComponent, {name:'Jabba the Hutt'}),
+        	React.createElement(NamedComponent, {name:'Captain Picard'}),
+        	React.createElement(NamedComponent, {name:'Abominable Snowman'})
+
+        	))
+        
+        ReactDOM.render(App, document.getElementById('app'))
+    </script>
+</body>
+</html>
