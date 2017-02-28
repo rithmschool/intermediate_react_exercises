@@ -1,0 +1,4 @@
+node_modules
+__pychache__
+.DS_Store
+npm debug .log
