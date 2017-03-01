@@ -5,7 +5,7 @@
 - [01 Intro](./Unit-01/01-intro/readme.md)
 - [02 JSX](./Unit-01/02-jsx/readme.md)
 - [03 Webpack](./Unit-01/03-webpack/readme.md)
-- [04 Props and State](./Unit-01/04-props-state/readme.md)
+- [04 Props and State](./Unit-01/04-props_state/readme.md)
 - [05 Events](./Unit-01/05-events/readme.md)
 - [06 React Life Cycle](./Unit-01/06-lifecycle/readme.md)
 
