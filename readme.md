@@ -9,7 +9,7 @@
 - [05 Events](./Unit-01/05-events/readme.md)
 - [06 React Life Cycle](./Unit-01/06-lifecycle/readme.md)
 
-### Unit 2 - React Router / Redux / React Native
+### Unit 2 - React Router / Redux
 
 - [01 Intermediate React](./Unit-02/01-intermediate-react/readme.md)
 - [02 Testing](./Unit-02/02-testing/readme.md)
@@ -17,4 +17,7 @@
 - [04 Redux](./Unit-02/04-redux/readme.md)
 - [05 React and Redux](./Unit-02/05-react-redux/readme.md)
 - [06 Full Stack React](./Unit-02/06-full-stack-react/readme.md)
-- [07 React Native](./Unit-02/07-react-native/readme.md)
+
+### Unit 3 - React Native
+
+- [01 React Native Setup And Styling](./Unit-03/01-react-native-setup-and-styling/readme.md)
