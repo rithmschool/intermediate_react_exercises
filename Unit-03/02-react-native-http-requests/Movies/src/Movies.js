@@ -66,7 +66,7 @@ export default class Movies extends Component {
               <Text style={styles.buttonText}>FIND</Text>
             </TouchableOpacity> 
         </View>
-        <ScrollView style={{flex:0.8}}>
+        <ScrollView style={{flex:0.8, width: "95%"}}>
           {movies}
         </ScrollView>
       </View>
