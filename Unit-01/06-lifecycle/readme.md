@@ -2,7 +2,7 @@
 
 ### Part 1 
 
-Rebuild the [Giphy API exercise](https://github.com/rithmschool/intermediate_js_exercises/tree/master/ajax_with_jquery_exercise/giphy_example) with React.
+Rebuild the [Giphy API exercise](https://www.rithmschool.com/courses/intermediate-javascript-part-2/ajax-exercises) with React.
 
 ### Part 2
 
