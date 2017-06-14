@@ -24,7 +24,6 @@ class Item extends Component {
       </div>
     ))
 
-
     return (
       <div className="item">
         <div className="name">
@@ -32,7 +31,7 @@ class Item extends Component {
         </div>
         <div>
           <button className="price" onClick={this.handleClick}>
-            ${this.props.price}
+            ${(+this.props.price).toFixed(2)}
           </button>
         </div>
         <img src={this.props.image_link} alt={this.props.name}/>

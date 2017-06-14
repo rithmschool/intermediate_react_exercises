@@ -6,12 +6,17 @@ import { Route } from 'react-router-dom';
 class BrandList extends Component {
 
   render() {
+
+    let selectedBrand = this.props.location.pathname.split("/")[2];
+    let active;
     
-    const brands = this.props.brands.map((item, i) => {
+    let brands = this.props.brands.map((item, i) => {
+      item === selectedBrand ? active = true : active = false;
       return (
         <Brand
           key={i}
           name={item}
+          active={active}
         />
       )
     })

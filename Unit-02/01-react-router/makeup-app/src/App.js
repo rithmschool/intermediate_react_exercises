@@ -47,6 +47,7 @@ class App extends Component {
       return (
         <BrandList 
           handleAdd={this.addItemToCart.bind(this)}
+          active={false}
           {...props}
         />
       )
