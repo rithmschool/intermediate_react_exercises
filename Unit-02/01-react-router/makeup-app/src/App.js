@@ -9,7 +9,6 @@ import {
 import BrandList from './BrandList';
 import Cart from './Cart';
 
-const Home = () => <Redirect to="/brands"/>
 
 class App extends Component {
 
@@ -42,6 +41,8 @@ class App extends Component {
   }
 
   render() {
+
+    const Home = () => <Redirect to="/brands"/>
 
     const MyBrandList = (props) => {
       return (
