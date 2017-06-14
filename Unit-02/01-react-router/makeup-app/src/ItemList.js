@@ -49,6 +49,7 @@ class ItemList extends Component {
         description={item.description}
         colors={itemColors[i]}
         handleAdd={this.props.handleAdd}
+        color="white"
       />
     ))
 

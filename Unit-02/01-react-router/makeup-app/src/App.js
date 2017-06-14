@@ -68,13 +68,13 @@ class App extends Component {
       <Router>
         <div className="App">
           <div className="App-header">
-            <Link to="/brands" className="link">
+            <Link to="/brands" className="link" style={{textDecoration: "none"}}>
               <span role="img" aria-label="nails">💅</span>
               <span>Makeup Mega Market</span>
               <span role="img" aria-label="lipstick">💄</span>
               </Link>
             <span>&nbsp;&nbsp;</span>
-            <Link to="/brands" className="link">Brands</Link>
+            <Link to="/brands" className="link" style={{textDecoration: "none"}}>Brands</Link>
             <Link to="/cart" className="link cart">
               <span role="img" aria-label="shopping cart">🛒</span>
             </Link>
