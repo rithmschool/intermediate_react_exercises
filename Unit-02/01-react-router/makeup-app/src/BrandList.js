@@ -20,12 +20,21 @@ class BrandList extends Component {
       )
     })
 
+    const MyItemList = (props) => {
+      return (
+        <ItemList 
+          handleAdd={this.props.handleAdd}
+          {...props}
+        />
+      );
+    }
+
     return (
       <div>
         <span>
           {brands}
         </span>
-        <Route path="/brands/:brand" component={ItemList}/>
+        <Route path="/brands/:brand" render={MyItemList}/>
       </div>
     )
   }

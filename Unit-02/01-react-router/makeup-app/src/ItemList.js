@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Item from './Item';
+import "./ItemList.css";
 
 class ItemList extends Component {
 
@@ -10,31 +11,26 @@ class ItemList extends Component {
     }
   }
 
-  componentDidUpdate(prevProps) {
-    if(prevProps.match.params.brand !== this.props.match.params.brand) {
-     // make AJAX call
-      let url = `http://makeup-api.herokuapp.com/api/v1/products.json?brand=${this.props.match.params.brand}`;
-      fetch(url).then(response => response.json()).then(items => {
-        this.setState( {items} )
-        // console.log(this.state.items);
-      })
-    }
-  }
-
-  componentDidMount() {
-
-    // make AJAX call to get the item list
+  makeAJAXCall() {
     let url = `http://makeup-api.herokuapp.com/api/v1/products.json?brand=${this.props.match.params.brand}`;
     fetch(url).then(response => response.json()).then(items => {
       this.setState( {items} )
-      // console.log(this.state.items);
     })
+  }
+
+  componentDidMount() {
+    this.makeAJAXCall();
+  }
+
+  componentDidUpdate(prevProps) {
+    if(prevProps.match.params.brand !== this.props.match.params.brand) {
+      this.makeAJAXCall();
+    }
   }
 
   render() {
 
     // get colors into array for each item
-
     let itemColors = this.state.items.map((item, i) => {
       let productColors = item.product_colors.map((color, i) => {
         return color.hex_value;
@@ -43,7 +39,6 @@ class ItemList extends Component {
     })
 
     // make a variable called items to display below
-
     let items = this.state.items.map((item,i) => (
       <Item
         key={i}
@@ -53,11 +48,13 @@ class ItemList extends Component {
         category={item.category}
         description={item.description}
         colors={itemColors[i]}
+        handleAdd={this.props.handleAdd}
       />
     ))
 
     return (
       <div>
+        <h1>{this.props.match.params.brand}</h1>
         {items}
       </div>
     )

@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 import './Item.css';
 
 class Item extends Component {
+
+  constructor(props) {
+    super(props)
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    this.props.handleAdd(this);
+  }
+
   render() {
 
     let colors = this.props.colors.map((color, i) => (
@@ -21,7 +31,7 @@ class Item extends Component {
           {this.props.name}
         </div>
         <div>
-          <button className="price">
+          <button className="price" onClick={this.handleClick}>
             ${this.props.price}
           </button>
         </div>
