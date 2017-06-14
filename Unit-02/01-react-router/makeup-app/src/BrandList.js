@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import Brand from './Brand';
 import ItemList from './ItemList';
-import {
-  Route,
-  Link,
-  BrowserRouter as Router
-} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 class BrandList extends Component {
 

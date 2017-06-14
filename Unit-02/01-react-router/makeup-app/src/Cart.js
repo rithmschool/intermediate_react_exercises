@@ -13,24 +13,13 @@ class Cart extends Component {
   }
 
   render() {
-    console.log("items",this.props.items);
-
-    // NEED TO PUT IN AN ARRAY OF OBJECTS TO SHOW COUNTS
-    // AND ONLY SHOW EACH ITEM ONCE (WITH QUANTITY)
     let items = this.props.items;
-    let counts = {};
-    for (let i = 0; i < items.length; i++) {
-        counts[items[i]] = 1 + (counts[items[i]] || 0);
-    }
-    console.log("counts",counts);
-
-    
 
     let tableRows = items.map((item, i) => (
       <tr key={i}>
-        <th scope="row">{counts[items[i]]}</th>
+        <th scope="row">{item.quantity}</th>
         <td>{item.props.name}</td>
-        <td>{item.props.price}</td>
+        <td>{item.props.price * item.quantity}</td>
         <td>
           <button 
             type="button" 
@@ -46,7 +35,7 @@ class Cart extends Component {
 
     let total = 0;
     this.props.items.forEach((item, i) => {
-      total += +item.props.price;
+      total += (+item.props.price) * (+item.quantity);
     })
     total = total.toFixed(2);
 

@@ -7,7 +7,6 @@ import {
   Redirect
 } from 'react-router-dom';
 import BrandList from './BrandList';
-import ItemList from './ItemList';
 import Cart from './Cart';
 
 const Home = () => <Redirect to="/brands"/>
@@ -23,7 +22,13 @@ class App extends Component {
 
   addItemToCart(item) {
     let cart = this.state.cart.slice();
-    cart.push(item);
+    if (cart.includes(item)) {
+      let index = cart.indexOf(item);
+      cart[index].quantity++;
+    } else {
+      item.quantity = 1;
+      cart.push(item);
+    }
     this.setState({ cart })
   }
 
@@ -61,10 +66,16 @@ class App extends Component {
       <Router>
         <div className="App">
           <div className="App-header">
-            <Link to="/brands" className="link">💅Makeup Mega Market💄</Link>
+            <Link to="/brands" className="link">
+              <span role="img" aria-label="nails">💅</span>
+              <span>Makeup Mega Market</span>
+              <span role="img" aria-label="lipstick">💄</span>
+              </Link>
             <span>&nbsp;&nbsp;</span>
             <Link to="/brands" className="link">Brands</Link>
-            <Link to="/cart" className="link cart">🛒</Link>
+            <Link to="/cart" className="link cart">
+              <span role="img" aria-label="shopping cart">🛒</span>
+            </Link>
           </div>
           <Route exact path="/" component={Home}/>
           <Route path="/brands" render={MyBrandList}/>

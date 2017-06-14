@@ -35,7 +35,7 @@ class Item extends Component {
             ${this.props.price}
           </button>
         </div>
-        <img src={this.props.image_link}/>
+        <img src={this.props.image_link} alt={this.props.name}/>
         <div className="other">
           Category: {this.props.category}
         </div>
