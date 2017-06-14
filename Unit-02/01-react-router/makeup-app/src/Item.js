@@ -17,6 +17,11 @@ class Item extends Component {
     this.setState({
       animation: "fade 1s 1"
     })
+    setTimeout( () => {
+      this.setState({
+        animation: null
+      })
+    }, 1000);
   }
 
   render() {
