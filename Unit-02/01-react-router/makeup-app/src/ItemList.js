@@ -33,9 +33,16 @@ class ItemList extends Component {
 
   render() {
 
-    // make a variable called items to display below
+    // get colors into array for each item
 
-    // console.log(this.state.items);
+    let itemColors = this.state.items.map((item, i) => {
+      let productColors = item.product_colors.map((color, i) => {
+        return color.hex_value;
+      })
+      return productColors;
+    })
+
+    // make a variable called items to display below
 
     let items = this.state.items.map((item,i) => (
       <Item
@@ -45,10 +52,9 @@ class ItemList extends Component {
         image_link={item.image_link}
         category={item.category}
         description={item.description}
+        colors={itemColors[i]}
       />
     ))
-
-    // console.log(items);
 
     return (
       <div>

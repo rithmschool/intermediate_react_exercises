@@ -1,5 +1,38 @@
 .item {
   display: inline-block;
-  width: 300px;
+  width: 200px;
   height: 500px;
+  overflow: auto;
+  /*white-space:nowrap;*/
+  margin: 10px 50px 10px 50px;
+}
+
+.name {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.price {
+  background-color: lightgray;
+  padding: 4px;
+  border: solid gray .5px;
+}
+
+.description {
+  font-size: 12px;
+}
+
+img {
+  margin-top: 20px;
+}
+
+.other {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.color {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
 }

@@ -3,22 +3,36 @@ import './Item.css';
 
 class Item extends Component {
   render() {
+
+    let colors = this.props.colors.map((color, i) => (
+      <div 
+        className="color" 
+        style={{backgroundColor: color}}
+        key={i}
+      >
+        &nbsp;
+      </div>
+    ))
+
+
     return (
       <div className="item">
-        <h5>
+        <div className="name">
           {this.props.name}
-        </h5>
+        </div>
         <div>
-          {this.props.price}
+          <button className="price">
+            ${this.props.price}
+          </button>
         </div>
         <img src={this.props.image_link}/>
-        <div>
+        <div className="other">
           Category: {this.props.category}
         </div>
-        <div>
-          Colors: {this.props.colors}
+        <div className="other">
+          Colors: <div>{colors}</div>
         </div>
-        <div>
+        <div className="description">
           {this.props.description}
         </div>
       </div>
