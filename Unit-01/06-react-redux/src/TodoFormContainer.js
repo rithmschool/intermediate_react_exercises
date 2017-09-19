@@ -1,49 +1,49 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {addTodo} from './actions';
+import React from 'react';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import { addTodo, updateTodo } from './actions';
+import TodoForm from './TodoForm';
 
-class TodoFormContainer extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      text: ''
+class TodoFormContainer extends React.Component {
+
+  state = {
+    redirect: false
+  }
+
+  saveTodo = ({id, task }) => {
+    if (id) {
+      this.props.updateTodo({ id, task })
+    } else {
+      this.props.addTodo({ task })
     }
-    this.handleChange = this.handleChange.bind(this);
+
+    this.setState({ redirect: true })
   }
-  handleChange(e) {
-    this.setState({
-      text: e.target.value
-    });
-  }
+
   render() {
     return (
       <div>
-        <form className="form-inline" onSubmit={(e) => {
-          e.preventDefault();
-          // this.props.dispatch(addTodo(this.state))
-          this.props.addTodo(this.state);
-          this.props.history.push('/todos');
-        }}>
-          <div className="form-group">
-          <label htmlFor="todo-input">Todo:</label>
-          <input style={{margin: "10px"}} onChange={this.handleChange}
-                 value={this.state.text}
-                 id="todo-input" placeholder="something important"
-                 className="form-control" />
-          <button style={{margin: "10px"}}
-                  type="submit" className="btn btn-primary">Add</button>
-          </div>
-        </form>
+        {
+          this.state.redirect ?
+          <Redirect to="/todos" /> :
+          <TodoForm
+            todo={this.props.todo}
+            saveTodo={this.saveTodo}
+          />
+        }
       </div>
     );
   }
 }
 
-const mapDispatchToProps = {addTodo};
-// const mapDispatchToProps = (dispatch, ownProps) => ({
-//   addTodo: (todo) => {
-//     dispatch(addTodo(todo))
-//   }
-// });
+function mapStateToProps(state, props) {
+  const { match } = props;
+  if (match.params.id) {
+    return {
+      todo: state.todos.find(todo => todo.id === +match.params.id)
+    }
+  }
+  return { todo: null };
+}
 
-export default connect(undefined,mapDispatchToProps)(TodoFormContainer);
+export default connect(mapStateToProps, { addTodo, updateTodo })(TodoFormContainer);

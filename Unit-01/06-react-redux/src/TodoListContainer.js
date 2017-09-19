@@ -1,13 +1,24 @@
+import React from 'react';
 import TodoList from './TodoList';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import { deleteTodo } from './actions';
 
-const mapStateToProps = (state) => ({
-  todos: state.todos
-});
+class TodoListContainer extends React.Component {
 
-const mapDispatchToProps = undefined;
+  render() {
+    return (
+      <div>
+        <h1>Todo List</h1>
+        <TodoList todos={this.props.todos} deleteTodo={this.props.deleteTodo} />
+      </div>
+    );
+  }
+}
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(TodoList)
+function mapStateToProps(state) {
+  return {
+    todos: state.todos
+  }
+}
+
+export default connect(mapStateToProps, { deleteTodo })(TodoListContainer);

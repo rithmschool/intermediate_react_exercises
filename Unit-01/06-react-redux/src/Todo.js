@@ -1,14 +1,12 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-export default (props) => (
-  <div style={{fontSize: "2em"}}>
-    {props.text}
-    <Link to={`/todos/${props.id}/edit`}>
-      <button className="btn btn-primary"
-              style={{margin: "10px"}}>
-        Edit
-      </button>
-    </Link>
-  </div>
-);
+export default function Todo({ task, id, deleteTodo }) {
+  return (
+      <div>
+        <div>{task}</div>
+        <Link to={`/todos/${id}/edit`}>Edit</Link>
+        <button onClick={() => deleteTodo(id)}>X</button>
+      </div>
+  );
+}
