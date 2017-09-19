@@ -1,29 +1,31 @@
 import React from 'react';
 
 class TodoForm extends React.Component {
-
-  state = {
-    id: this.props.todo ? this.props.todo.id : null,
-    task: this.props.todo ? this.props.todo.task : '',
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: props.todo ? props.id : null,
+      task: props.todo ? props.task : ''
+    };
   }
 
-  componentWillReceiveProps = (nextProps) => {
+  componentWillReceiveProps = nextProps => {
     this.setState({
       id: nextProps.todo.id,
-      task: nextProps.todo.task,
+      task: nextProps.todo.task
     });
-  }
+  };
 
-  handleChange = (e) => {
+  handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
-  }
+  };
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
-      const { id, task } = this.state;
-      this.setState({ loading: true });
-      this.props.saveTodo({ id, task })
-  }
+    const { id, task } = this.state;
+    this.setState({ loading: true });
+    this.props.saveTodo({ id, task });
+  };
 
   render() {
     const form = (
@@ -43,13 +45,8 @@ class TodoForm extends React.Component {
         </div>
       </form>
     );
-    return (
-      <div>
-        { form }
-      </div>
-    );
+    return <div>{form}</div>;
   }
 }
-
 
 export default TodoForm;

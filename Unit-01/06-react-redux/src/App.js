@@ -8,8 +8,8 @@ class App extends Component {
     return (
       <div>
         <h1>Welcome to our Todo App!</h1>
-        <Link to='/todos'>See Your Todos</Link>
-        <br/>
+        <Link to="/todos">See Your Todos</Link>
+        <br />
         <Link to="/todos/new">Add New Todo</Link>
 
         <Route exact path="/todos" component={TodoListContainer} />

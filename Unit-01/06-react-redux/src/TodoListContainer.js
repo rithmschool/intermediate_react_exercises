@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { deleteTodo } from './actions';
 
 class TodoListContainer extends React.Component {
-
   render() {
     return (
       <div>
@@ -18,7 +17,7 @@ class TodoListContainer extends React.Component {
 function mapStateToProps(state) {
   return {
     todos: state.todos
-  }
+  };
 }
 
 export default connect(mapStateToProps, { deleteTodo })(TodoListContainer);
