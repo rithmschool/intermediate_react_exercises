@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Todo App!</h1>
+  <ul id="todos">
+
+  </ul>
+  <form action="javascript:void(0)">
+    <p>
+      <label for="title">Title: </label>
+      <input type="text" name="title" id="title">
+    </p>
+    <p>
+      <label for="description">Description: </label>
+      <input type="text" name="description" id="description">
+    </p>
+    <button>Add Todo!</button>
+  </form>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.7.2/redux.js"></script>
+  <script src="actions.js" type="module"></script>
+  <script src="reducers.js" type="module"></script>
+  <script src="main.js" type="module"></script>
+</body>
+</html>
