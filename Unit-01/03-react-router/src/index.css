@@ -1,13 +1,26 @@
 body {
   margin: 0;
-  font-family: sans-serif;
-}
-
-button:hover {
-  cursor: pointer;
+  font-family: Helvetica, sans-serif;
 }
 
 button:active,
-button:focus {
+button:focus,
+input[type="submit"]:focus {
   outline: none;
+}
+
+button,
+input[type="submit"],
+.edit-button,
+.cancel {
+  margin: 0 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.8em;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  cursor: pointer;
 }

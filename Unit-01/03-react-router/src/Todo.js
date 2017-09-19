@@ -1,65 +1,55 @@
-import React, { Component} from 'react';
-import 'font-awesome/css/font-awesome.css';
-import './Todo.css';
-import EditTodo from './EditTodo.js'
-import {Link, Route} from 'react-router-dom'
+import React from "react";
+import PropTypes from "prop-types";
+import "./Todo.css";
+import { Link } from "react-router-dom";
 
-class Todo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      editing: false
-    }
-    this.toggleEdit = this.toggleEdit.bind(this)
-  }
+const Todo = ({
+  id,
+  isComplete,
+  title,
+  description,
+  handleDelete,
+  toggleComplete,
+  handleEdit
+}) => {
+  let complete = isComplete ? "complete" : "";
+  let buttonText = isComplete ? "incomplete" : "complete";
 
-  componentWillMount() {
-    if(+this.props.location.pathname.split('/')[2] === this.props.todoIdx){
-      this.setState({editing: true})
-    }
-  }
-
-  toggleEdit() {
-    this.setState({editing: !this.state.editing})
-  }
-
-  render() {
-    let editing = this.state.editing ?
-      <EditTodo
-        todo={this.props.todo}
-        handleEdit={this.props.handleEdit}
-        toggleEdit={this.toggleEdit}
-      /> :
-      null;
-
-    return (
-      <div className="Todo">
-        <aside>
-          <h1>#{this.props.todoIdx}</h1>
-        </aside>
-        <div className="Todo-main">
-          <p>{this.props.todo}</p>
-          {editing}
-          <div>
-
-            <Route exact path='/todos' render={() => (
-              <div>
-                <Link to={`/todos/${this.props.todoIdx}/edit`}>
-                  <button onClick={this.toggleEdit} className="edit">
-                    <i className="fa fa-pencil fa-2x" aria-hidden="true"></i>
-                  </button>
-                </Link>
-                <button onClick={this.props.handleDelete} className="delete">
-                  <i className="fa fa-trash-o fa-2x" aria-hidden="true"></i>
-                </button>
-              </div>
-            )}/>
-
-          </div>
-        </div>
+  return (
+    <div className={`Todo ${complete}`}>
+      <h3>
+        <Link to={`/todos/${id}`}>{title}</Link>
+      </h3>
+      <p>{description}</p>
+      <div className="button-wrapper">
+        <button className="complete-button" onClick={toggleComplete}>
+          Mark as {buttonText}
+        </button>
+        <button className="remove-button" onClick={handleDelete}>
+          Delete this todo
+        </button>
+        <Link className="edit-button" to={`/todos/${id}/edit`}>
+          Edit this todo
+        </Link>
       </div>
-    )
-  }
-}
+    </div>
+  );
+};
+
+Todo.propTypes = {
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  isComplete: PropTypes.bool.isRequired,
+  handleDelete: PropTypes.func.isRequired,
+  handleEdit: PropTypes.func.isRequired,
+  toggleComplete: PropTypes.func.isRequired
+};
+
+Todo.defaultProps = {
+  title: "",
+  description: "",
+  isComplete: false
+};
 
 export default Todo;

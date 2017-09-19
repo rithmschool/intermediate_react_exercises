@@ -1,56 +1,52 @@
 .Todo {
-  background-color: #EEE;
-  display: flex;
-  margin: 40px 10%;
-  padding: 20px;
-  border-radius: 10px;
-  align-items: stretch;
-  justify-content: center;
-  border: 2px solid #DDD;
-  min-height: 76px;
+  width: 60%;
+  border: 3px solid #673ab7;
+  margin: 40px auto;
+  background-color: #f7f6ff;
+  border-radius: 6px;
+  padding: 15px;
 }
 
-.Todo > aside > h1 {
-  font-size: 4em;
+.Todo h3 {
   margin: 0;
+  text-align: center;
 }
 
-.Todo-main {
-  width: auto;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-left: 20px;
+.button-wrapper {
+  text-align: right;
 }
 
-.Todo-main p {
-  display: inline-block;
-  font-size: 1.5em;
-  max-width: 250px;
+.complete-button {
+  background-color: #2196f3;
 }
 
-.Todo-main .edit,
-.Todo-main .delete {
-  margin: 0 10px;
-  padding: 10px;
-  border: none;
-  border-radius: 50%;
-  width: 42px;
+.complete-button:hover {
+  background-color: #0c78cd;
 }
 
-.Todo-main .edit {
-  background-color: #b3ffb3;
+.remove-button {
+  background-color: #e91e63;
 }
 
-.Todo-main .edit:hover {
-  background-color: #4d994d;
+.remove-button:hover {
+  background-color: #bf0b48;
 }
 
-.Todo-main .delete {
-  background-color: #f79ba9;
+.edit-button {
+  background-color: #f3eb0c;
 }
 
-.Todo-main .delete:hover {
-  background-color: #ab4f5d;
+.edit-button:hover {
+  background-color: #b3bf0e;
+}
+
+.complete h3,
+.complete p {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.Todo.complete {
+  background-color: #ddd;
+  border: 3px solid #888;
 }

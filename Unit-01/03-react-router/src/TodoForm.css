@@ -1,0 +1,40 @@
+input[type="text"],
+.cancel {
+  padding: 8px;
+  min-width: 150px;
+  margin: 0 10px;
+  border-radius: 8px;
+  border: 1px solid #888;
+}
+
+.cancel {
+  background-color: #ffe796;
+}
+
+.cancel,
+.edit-button {
+  text-decoration: none;
+  color: black;
+}
+
+input[type="submit"] {
+  background-color: #6cf26c;
+}
+
+input[type="submit"]:hover {
+  background-color: #59c259;
+}
+
+form {
+  margin: 30px auto;
+  width: 60%;
+}
+
+.Todo form {
+  width: 100%;
+}
+
+.input-area {
+  display: inline-block;
+  margin: 10px;
+}
