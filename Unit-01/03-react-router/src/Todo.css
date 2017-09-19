@@ -1,0 +1,56 @@
+.Todo {
+  background-color: #EEE;
+  display: flex;
+  margin: 40px 10%;
+  padding: 20px;
+  border-radius: 10px;
+  align-items: stretch;
+  justify-content: center;
+  border: 2px solid #DDD;
+  min-height: 76px;
+}
+
+.Todo > aside > h1 {
+  font-size: 4em;
+  margin: 0;
+}
+
+.Todo-main {
+  width: auto;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+
+.Todo-main p {
+  display: inline-block;
+  font-size: 1.5em;
+  max-width: 250px;
+}
+
+.Todo-main .edit,
+.Todo-main .delete {
+  margin: 0 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+}
+
+.Todo-main .edit {
+  background-color: #b3ffb3;
+}
+
+.Todo-main .edit:hover {
+  background-color: #4d994d;
+}
+
+.Todo-main .delete {
+  background-color: #f79ba9;
+}
+
+.Todo-main .delete:hover {
+  background-color: #ab4f5d;
+}

@@ -1,0 +1,11 @@
+.NewTodo input,
+.NewTodo button {
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 1.5em;
+}
+
+.NewTodo input {
+  border: 2px solid #d1b4d1;
+}

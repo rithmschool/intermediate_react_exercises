@@ -1,0 +1,28 @@
+.TodoList .new-todo-button {
+  background-color: #289bae;
+  border: 2px solid #28caca;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 1.5em;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.TodoList {
+  text-align: center;
+}
+
+.TodoList-header {
+  background-color: #620062;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}

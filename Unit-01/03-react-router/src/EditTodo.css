@@ -1,0 +1,20 @@
+.EditTodo input, 
+.EditTodo button {
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 1.5em;
+}
+
+.EditTodo input {
+  border: 2px solid #CCC;
+}
+
+.EditTodo button {
+  background-color: #6feaea;
+  border: 2px solid #28caca;
+}
+
+.EditTodo button:hover {
+  background-color: #28caca;
+}

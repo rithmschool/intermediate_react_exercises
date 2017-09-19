@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:active,
+button:focus {
+  outline: none;
+}
