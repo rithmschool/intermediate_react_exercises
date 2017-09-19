@@ -4,8 +4,8 @@ class TodoForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: props.todo ? props.id : null,
-      task: props.todo ? props.task : ''
+      id: props.todo ? props.todo.id : null,
+      task: props.todo ? props.todo.task : ''
     };
   }
 
