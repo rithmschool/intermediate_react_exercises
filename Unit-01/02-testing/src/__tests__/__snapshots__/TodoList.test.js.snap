@@ -1,0 +1,8 @@
+exports[`test matches its snapshot with no todos 1`] = `
+<div>
+  <TodoForm
+    description=""
+    handleSubmit={[Function]}
+    title="" />
+</div>
+`;

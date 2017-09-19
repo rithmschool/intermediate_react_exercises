@@ -1,0 +1,61 @@
+exports[`test matches snapshot when complete 1`] = `
+<div
+  className="Todo complete">
+  <h3>
+    
+  </h3>
+  <p>
+    
+  </p>
+  <div
+    className="button-wrapper">
+    <button
+      className="complete-button"
+      onClick={[Function]}>
+      Mark as 
+      incomplete
+    </button>
+    <button
+      className="remove-button"
+      onClick={[Function]}>
+      Delete this todo
+    </button>
+    <button
+      className="edit-button"
+      onClick={[Function]}>
+      Edit this todo
+    </button>
+  </div>
+</div>
+`;
+
+exports[`test matches snapshot when incomplete 1`] = `
+<div
+  className="Todo ">
+  <h3>
+    
+  </h3>
+  <p>
+    
+  </p>
+  <div
+    className="button-wrapper">
+    <button
+      className="complete-button"
+      onClick={[Function]}>
+      Mark as 
+      complete
+    </button>
+    <button
+      className="remove-button"
+      onClick={[Function]}>
+      Delete this todo
+    </button>
+    <button
+      className="edit-button"
+      onClick={[Function]}>
+      Edit this todo
+    </button>
+  </div>
+</div>
+`;

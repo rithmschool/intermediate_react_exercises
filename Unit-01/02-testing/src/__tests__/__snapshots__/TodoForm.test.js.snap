@@ -1,0 +1,65 @@
+exports[`test matches snapshot for edit form 1`] = `
+<form
+  onSubmit={[Function]}>
+  <div
+    className="input-area">
+    <label>
+      Title:
+      <input
+        name="title"
+        onChange={[Function]}
+        placeholder="What do you need to do?"
+        type="text"
+        value="a" />
+    </label>
+  </div>
+  <div
+    className="input-area">
+    <label>
+      Description:
+      <input
+        name="description"
+        onChange={[Function]}
+        placeholder="Details, please!"
+        type="text"
+        value="b" />
+    </label>
+  </div>
+  <input
+    type="submit"
+    value="Edit this todo!" />
+</form>
+`;
+
+exports[`test matches snapshot for new form 1`] = `
+<form
+  onSubmit={[Function]}>
+  <div
+    className="input-area">
+    <label>
+      Title:
+      <input
+        name="title"
+        onChange={[Function]}
+        placeholder="What do you need to do?"
+        type="text"
+        value="" />
+    </label>
+  </div>
+  <div
+    className="input-area">
+    <label>
+      Description:
+      <input
+        name="description"
+        onChange={[Function]}
+        placeholder="Details, please!"
+        type="text"
+        value="" />
+    </label>
+  </div>
+  <input
+    type="submit"
+    value="Add this todo!" />
+</form>
+`;
