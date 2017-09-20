@@ -1,0 +1,16 @@
+.App-header {
+  height: 80px;
+  padding: 20px;
+  font-size: 36px;
+  border-bottom: solid lightgray 1px;
+}
+
+.link {
+  color: gray;
+}
+
+.cart {
+  float: right;
+}
+
+

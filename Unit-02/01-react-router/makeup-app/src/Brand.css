@@ -1,0 +1,15 @@
+.inner {
+  display: inline-block;
+  margin: 8px;
+  padding-left: 2px;
+  padding-right: 2px;
+  background-color: lightpink;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: blue;
+  border-radius: 5px;
+}
+
+.outer {
+  background-color: white;
+}
