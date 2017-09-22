@@ -6,8 +6,11 @@ const defaultState = {
 export default function rootReducer(state = defaultState, action) {
   switch (action.type) {
     case "ADD_TODO":
-      let newTodo = Object.assign({}, action.payload, { id: ++state.startId });
-      const newTodos = [...state.todos, newTodo];
+      let newState = { ...state };
+      let newTodo = Object.assign({}, action.payload, {
+        id: ++newState.startId
+      });
+      const newTodos = [...newState.todos, newTodo];
       return Object.assign({}, state, { todos: newTodos });
 
     case "REMOVE_TODO":
