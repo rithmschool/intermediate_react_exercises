@@ -12,10 +12,6 @@ beforeEach(() => {
   wrapper = shallow(<TodoList />);
 });
 
-test("renders without crashing", () => {
-  shallow(<TodoList />);
-});
-
 test("matches its snapshot with no todos", () => {
   expect(toJson(wrapper)).toMatchSnapshot();
 });

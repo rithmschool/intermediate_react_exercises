@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import Todo from "./Todo";
-import TodoForm from "./TodoForm";
+import React, { Component } from 'react';
+import Todo from './Todo';
+import TodoForm from './TodoForm';
 
 class TodoList extends Component {
   constructor(props) {
@@ -10,8 +10,8 @@ class TodoList extends Component {
   }
 
   componentWillMount() {
-    let todos = JSON.parse(localStorage.getItem("todos")) || [];
-    let latestId = +JSON.parse(localStorage.getItem("latestId")) || 0;
+    let todos = JSON.parse(localStorage.getItem('todos')) || [];
+    let latestId = +JSON.parse(localStorage.getItem('latestId')) || 0;
     this.setState({ todos, latestId });
   }
 
@@ -23,8 +23,8 @@ class TodoList extends Component {
         todos: [{ ...newTodo, id: newId }, ...this.state.todos]
       },
       () => {
-        localStorage.setItem("todos", JSON.stringify(this.state.todos));
-        localStorage.setItem("latestId", this.state.latestId);
+        localStorage.setItem('todos', JSON.stringify(this.state.todos));
+        localStorage.setItem('latestId', this.state.latestId);
       }
     );
   }
@@ -39,14 +39,14 @@ class TodoList extends Component {
       return todo;
     });
     this.setState({ todos: newTodos }, () => {
-      localStorage.setItem("todos", JSON.stringify(this.state.todos));
+      localStorage.setItem('todos', JSON.stringify(this.state.todos));
     });
   }
 
   handleDelete(id) {
     let newTodos = this.state.todos.filter(t => t.id !== id);
     this.setState({ todos: newTodos }, () => {
-      localStorage.setItem("todos", JSON.stringify(this.state.todos));
+      localStorage.setItem('todos', JSON.stringify(this.state.todos));
     });
   }
 
@@ -58,7 +58,7 @@ class TodoList extends Component {
       return todo;
     });
     this.setState({ todos: newTodos }, () => {
-      localStorage.setItem("todos", JSON.stringify(this.state.todos));
+      localStorage.setItem('todos', JSON.stringify(this.state.todos));
     });
   }
 
@@ -71,9 +71,9 @@ class TodoList extends Component {
         description={todo.description}
         handleDelete={this.handleDelete.bind(this, todo.id)}
         handleEdit={this.handleEdit.bind(this, todo.id)}
-        toggleComplete={this.toggle.bind(this, todo.id, "isComplete")}
+        toggleComplete={this.toggle.bind(this, todo.id, 'isComplete')}
         isComplete={todo.isComplete}
-        toggleEditForm={this.toggle.bind(this, todo.id, "isShowingEditForm")}
+        toggleEditForm={this.toggle.bind(this, todo.id, 'isShowingEditForm')}
         isShowingEditForm={todo.isShowingEditForm}
       />
     ));

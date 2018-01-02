@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import "./Todo.css";
-import TodoForm from "./TodoForm";
+import React from 'react';
+import PropTypes from 'prop-types';
+import './Todo.css';
+import TodoForm from './TodoForm';
 
 const Todo = ({
   isComplete,
@@ -13,8 +13,8 @@ const Todo = ({
   toggleEditForm,
   handleEdit
 }) => {
-  let complete = isComplete ? "complete" : "";
-  let buttonText = isComplete ? "incomplete" : "complete";
+  let complete = isComplete ? 'complete' : '';
+  let buttonText = isComplete ? 'incomplete' : 'complete';
   let editForm = isShowingEditForm ? (
     <TodoForm
       title={title}
@@ -56,8 +56,8 @@ Todo.propTypes = {
 };
 
 Todo.defaultProps = {
-  title: "",
-  description: "",
+  title: '',
+  description: '',
   isComplete: false,
   isShowingEditForm: false
 };

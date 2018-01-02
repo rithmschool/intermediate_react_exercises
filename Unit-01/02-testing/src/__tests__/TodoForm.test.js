@@ -1,23 +1,23 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import { shallow } from "enzyme";
-import TodoForm from "../TodoForm";
+import React from 'react';
+import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
+import TodoForm from '../TodoForm';
 
 let props = {
   handleSubmit() {}
 };
 
-test("renders without crashing", () => {
+test('renders without crashing', () => {
   shallow(<TodoForm {...props} />);
 });
 
-test("matches snapshot for new form", () => {
+test('matches snapshot for new form', () => {
   const tree = renderer.create(<TodoForm {...props} />).toJSON();
 
   expect(tree).toMatchSnapshot();
 });
 
-test("matches snapshot for edit form", () => {
+test('matches snapshot for edit form', () => {
   const tree = renderer
     .create(<TodoForm {...props} title="a" description="b" />)
     .toJSON();

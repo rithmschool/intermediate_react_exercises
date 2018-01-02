@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import "./TodoForm.css";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import './TodoForm.css';
 
 class TodoForm extends Component {
   constructor(props) {
@@ -23,13 +23,13 @@ class TodoForm extends Component {
     e.preventDefault();
     this.props.handleSubmit(this.state);
     this.setState({
-      title: "",
-      description: ""
+      title: '',
+      description: ''
     });
   }
 
   render() {
-    let val = this.props.title ? "Edit this todo!" : "Add this todo!";
+    let val = this.props.title ? 'Edit this todo!' : 'Add this todo!';
     let { title, description } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
@@ -70,8 +70,8 @@ TodoForm.propTypes = {
 };
 
 TodoForm.defaultProps = {
-  title: "",
-  description: ""
+  title: '',
+  description: ''
 };
 
 export default TodoForm;
