@@ -1,4 +1,4 @@
-# Intermediate react Exercises
+# Intermediate React Exercises
 
 ![Rithm School](./rithm-school-company-logo.png)
 
