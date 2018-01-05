@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter, Switch, Route, Link } from "react-router-dom";
 import ToDo from "./ToDo";
 import NewToDoForm from "./NewToDoForm";
 
@@ -64,6 +65,7 @@ class ToDoList extends Component {
     this.setState({
       todos: newToDos
     });
+    this.props.history.push(`/todos/${key}/edit`);
   }
 
   handleSubmit(txt) {
@@ -80,6 +82,7 @@ class ToDoList extends Component {
       keyNum,
       toDos: newToDos
     });
+    this.props.history.push(`/todos`);
   }
 
   handleEdit(key, txt) {
@@ -94,30 +97,64 @@ class ToDoList extends Component {
     this.setState({
       toDos: newToDos
     });
+    this.props.history.push(`/todos`);
   }
 
   render() {
     const toDoList = this.state.toDos.map(e => {
       return (
-        <ToDo
-          key={e.key}
-          name={e.name}
-          finished={e.finished}
-          edit={e.edit}
-          deleteButton={this.handleDeleteClick.bind(this, e.key)}
-          editButton={this.handleEditClick.bind(this, e.key)}
-          completeButton={this.handleCompleteClick.bind(this, e.key)}
-          fnEdit={this.handleEdit.bind(this, e.key)}
-        />
+        <Link to={`/todos/${e.key}`}>
+          <ToDo
+            key={e.key}
+            name={e.name}
+            finished={e.finished}
+            edit={e.edit}
+            deleteButton={this.handleDeleteClick.bind(this, e.key)}
+            editButton={this.handleEditClick.bind(this, e.key)}
+            completeButton={this.handleCompleteClick.bind(this, e.key)}
+            fnEdit={this.handleEdit.bind(this, e.key)}
+          />
+        </Link>
       );
     });
     return (
       <main>
-        {toDoList}
-        <NewToDoForm fnSubmit={this.handleSubmit.bind(this)} />
+        <Switch>
+          <Route exact path="/todos" render={props => <div>{toDoList}</div>} />
+          <Route
+            exact
+            path="/todos/new"
+            render={props => (
+              <NewToDoForm fnSubmit={this.handleSubmit.bind(this)} {...props} />
+            )}
+          />
+          <Route
+            path="/todos/:id"
+            render={props => {
+              const e = this.state.toDos.find(
+                e => e.key === Number(props.match.params.id)
+              );
+              return (
+                <ToDo
+                  key={e.key}
+                  name={e.name}
+                  finished={e.finished}
+                  edit={e.edit}
+                  deleteButton={this.handleDeleteClick.bind(this, e.key)}
+                  editButton={this.handleEditClick.bind(this, e.key)}
+                  completeButton={this.handleCompleteClick.bind(this, e.key)}
+                  fnEdit={this.handleEdit.bind(this, e.key)}
+                  {...props}
+                />
+              );
+            }}
+          />
+        </Switch>
       </main>
     );
   }
 }
 
-export default ToDoList;
+export default withRouter(ToDoList);
+
+// <NewToDoForm fnSubmit={this.handleSubmit.bind(this)} />;
