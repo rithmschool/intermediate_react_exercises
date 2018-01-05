@@ -1,54 +1,27 @@
-import rootReducer from "./reducers.js";
-import { addTodo, removeTodo } from "./actions.js";
-
+// set up store
 const store = Redux.createStore(
-  rootReducer,
-  Redux.compose(
-    typeof window === "object" &&
-    typeof window.devToolsExtension !== "undefined"
-      ? window.devToolsExtension()
-      : f => f
-  )
+  moodReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-document.addEventListener("DOMContentLoaded", () => {
-  let todoList = document.querySelector("ul");
-  let startId = 1;
+// subscribe renderFace to face changes
+const face = document.getElementById('face');
+function renderFace() {
+  face.innerHTML = store.getState().face;
+}
+renderFace();
+store.subscribe(renderFace);
 
-  todoList.addEventListener("click", event => {
-    if (event.target.tagName === "BUTTON") {
-      store.dispatch(removeTodo(event.target.dataset.id));
-      event.target.parentElement.remove();
-    }
-  });
-
-  function createTodo(newTodo) {
-    let newLi = document.createElement("li");
-    let newHTML = `
-      <span>${newTodo.title} - ${newTodo.description}</span>
-      <button data-id=${newTodo.id}>X</button>
-    `;
-    newLi.innerHTML = newHTML;
-    todoList.append(newLi);
-  }
-
-  function displayTodos() {
-    let currentState = store.getState();
-    currentState.todos.forEach(createTodo);
-  }
-
-  let form = document.querySelector("form");
-
-  form.addEventListener("submit", function(event) {
-    event.preventDefault();
-    let newTodo = {
-      title: event.target.title.value,
-      description: event.target.description.value
-    };
-    store.dispatch(addTodo(newTodo));
-    let currentState = store.getState();
-    let mostRecentTodo = currentState.todos[currentState.todos.length - 1];
-    createTodo(mostRecentTodo);
-    form.reset();
-  });
+// listeners for the buttons
+document.getElementById('happy').addEventListener('click', e => {
+  store.dispatch(happyFace());
+});
+document.getElementById('sad').addEventListener('click', e => {
+  store.dispatch(sadFace());
+});
+document.getElementById('angry').addEventListener('click', e => {
+  store.dispatch(angryFace());
+});
+document.getElementById('confused').addEventListener('click', e => {
+  store.dispatch(confusedFace());
 });

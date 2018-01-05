@@ -1,13 +1,15 @@
-export function addTodo(todo) {
-  return {
-    type: "ADD_TODO",
-    payload: todo
-  };
+function happyFace() {
+  return { type: 'happy', payload: '٩(◕‿◕｡)۶' };
 }
 
-export function removeTodo(id) {
-  return {
-    type: "REMOVE_TODO",
-    payload: id
-  };
+function sadFace() {
+  return { type: 'sad', payload: '(ಥ﹏ಥ)' };
+}
+
+function angryFace() {
+  return { type: 'angry', payload: '٩(ఠ益ఠ)۶' };
+}
+
+function confusedFace() {
+  return { type: 'confused', payload: 'ლ(ಠ_ಠ ლ)' };
 }

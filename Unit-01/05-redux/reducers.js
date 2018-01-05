@@ -1,24 +1,17 @@
-const defaultState = {
-  todos: [],
-  startId: 0
+const DEFAULT_STATE = {
+  face: '┐( ˘_˘ )┌	'
 };
 
-export default function rootReducer(state = defaultState, action) {
+function moodReducer(state = DEFAULT_STATE, action) {
   switch (action.type) {
-    case "ADD_TODO":
-      let newState = { ...state };
-      let newTodo = Object.assign({}, action.payload, {
-        id: ++newState.startId
-      });
-      const newTodos = [...newState.todos, newTodo];
-      return Object.assign({}, state, { todos: newTodos });
-
-    case "REMOVE_TODO":
-      let updatedTodos = state.todos.filter(
-        todo => todo.id !== +action.payload
-      );
-      return Object.assign({}, state, { todos: updatedTodos });
-
+    case 'happy':
+      return { ...state, face: action.payload };
+    case 'sad':
+      return { ...state, face: action.payload };    
+    case 'angry':
+      return { ...state, face: action.payload };
+    case 'confused':
+      return { ...state, face: action.payload };
     default:
       return state;
   }
