@@ -1,37 +1,20 @@
-# React Router Makeup App
+# React Router Color Factory
 
-The goal of the application is to use react router to create an online makeup store.  
+The goal of this exercise will be to use React Router to build an app that lets you view colors and add new colors. It's basically a CR app on colors.
 
-## Mockups
+__User Stories__.
 
-__Mockup 1 - App Flow__
+1. As a user, I can go to `/colors` to see a list of all available colors.
+2. As a user, I can click on one of the colors in my colors list and get taken to a page where I can see that color in all its glory. (The route here should be `/colors/:color`.)
+3. As a user, I can click on a button to show a form that will let me add a new color. (The route here should be `/colors/new`)
+4. As a user, when I submit my new color form, I am redirected to the colors index, and my new color appears at the top.
+5. As a user, if I try to navigate to a color page that does not exist (e.g. `/colors/burrito`), I am redirected to the colors index page.
+6. As a user, if I try to navigate to an invalid url (e.g. `/this-is-not-valid`), I am redirected to the colors index page.
 
-Below is a gif that shows the general flow of the app.  Notice that the root route redirects to `/brands/`.   Also, clicking on `ALMAY` changed the url to `/brands/almay` and shows only products for almay.  When a price button is clicked on, the product is added to the users cart.  You can then click on the cart icon to see your current shopping cart and your total
+Your app should have some styling. As a bonus, persist your colors data in `localStorage`.
 
+Here's an idea of what your app could look like:
 
-![makeup app demo](./makeup-app.gif)
+![color app demo](./color-factory.gif)
 
-__Mockup 2 - Makeup Details__
-
-In the second gif you should take note of all of the details within a makeup product card.  It contains the product name, price, image, category,
-colors available, and a description.  Clicking on a different brand will produce results only from that brand.
-
-![makeup app show product details](./makeup-app-makeup-cards.gif)
-
-## Technical Details
-
-* Use react router to change the routes in the address bar.
-* Make sure `/` redirects to `/brands`
-* The makeup api details are at [https://makeup-api.herokuapp.com/](https://makeup-api.herokuapp.com/).  You can use the following array of brand names as default props to one of your components:
-
-```
-  brands: ["almay", "annabelle", "benefit", "covergirl",
-           "dalish", "e.l.f.", "essie", "iman", "l'oreal",
-           "marcelle", "maybelline", "milani", "mineral fusion", "misa",
-           "mistura", "moov", "nyx", "orly", "pacifica", "physicians",
-           "formula", "anada", "revlon", "salon",
-           "sante", "sinful", "smashbox", "stila",
-           "suncoat", "zorah"]
-```
-* Make sure that your navigation works as well.  The `Brands` nav should redirect to `/brands` and the shopping cart should redirect to `/cart`.  Also the `Mega Makeup Market` should redirect to `/brands`
-* On a mac, to add emojis, use cntrl + command + space 🤠👍
+Good luck!

@@ -15,6 +15,7 @@ This repository contains the exercises for Rithm School's free [Intermediate Rea
 - [05 Redux](./Unit-01/05-redux)
 - [06 React and Redux](./Unit-01/06-react-redux)
 - [07 Full Stack React](./Unit-01/07-full-stack-react)
+- [08 BONUS React Router](./Unit-01/08-bonus-react-router)
 
 ### Unit 2 - React Native
 
