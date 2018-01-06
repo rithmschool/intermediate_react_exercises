@@ -1,4 +1,4 @@
-# React Router Color Factory
+# Part I - React Router Color Factory
 
 The goal of this exercise will be to use React Router to build an app that lets you view colors and add new colors. It's basically a CR app on colors.
 
@@ -17,4 +17,18 @@ Here's an idea of what your app could look like:
 
 ![color app demo](./color-factory.gif)
 
+# Part II - React Router Todo App
+
+It's time to refactor your Todo application to use React Router!
+
+Your goal is to set up the following RESTful routes.
+
+- `/todos` - list all of your todos
+- `/todos/new` - render a form to create a new todos
+- `/todos/:id` - list a single todo
+- `/todos/:id/edit` - render a form to edit an existing todo
+
+When a user creates, updates or deletes a todo, they should be redirected to the `/todos` page.
+
 Good luck!
+
