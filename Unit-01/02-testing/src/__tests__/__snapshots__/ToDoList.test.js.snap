@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ToDoList /> matches the snapshot 1`] = `
+<main>
+  <p>
+    <a
+      onClick={[Function]}
+    >
+       
+      <img
+        alt="Unfinished"
+        src="https://freeclipartspot.com//storage/upload/square-clip-art/square-clip-art-6.png"
+      />
+       
+    </a>
+    <span
+      className="ToDo"
+    >
+       
+      Finish Homework
+       
+    </span>
+    <span
+      className="ButtonSection"
+    >
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "yellow",
+          }
+        }
+      >
+        Edit
+      </button>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "red",
+          }
+        }
+      >
+        Delete
+      </button>
+    </span>
+  </p>
+  <p>
+    <a
+      onClick={[Function]}
+    >
+       
+      <img
+        alt="Unfinished"
+        src="https://freeclipartspot.com//storage/upload/square-clip-art/square-clip-art-6.png"
+      />
+       
+    </a>
+    <span
+      className="ToDo"
+    >
+       
+      Sleep
+       
+    </span>
+    <span
+      className="ButtonSection"
+    >
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "yellow",
+          }
+        }
+      >
+        Edit
+      </button>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "red",
+          }
+        }
+      >
+        Delete
+      </button>
+    </span>
+  </p>
+  <p>
+    <a
+      onClick={[Function]}
+    >
+       
+      <img
+        alt="Finished"
+        src="http://is2.mzstatic.com/image/thumb/Purple5/v4/0e/52/a8/0e52a81b-bbe0-69fe-9d86-a3a47d5a9c63/source/1200x630bb.jpg"
+      />
+       
+    </a>
+    <span
+      className="ToDo"
+    >
+       
+      Be Happy
+       
+    </span>
+    <span
+      className="ButtonSection"
+    >
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "yellow",
+          }
+        }
+      >
+        Edit
+      </button>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "red",
+          }
+        }
+      >
+        Delete
+      </button>
+    </span>
+  </p>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="toDo"
+    >
+      To do:
+    </label>
+    <input
+      id="toDo"
+      name="toDo"
+      onChange={[Function]}
+      placeholder="What do you need to do?"
+      type="text"
+      value=""
+    />
+    <button
+      type="submit"
+    >
+      Add to-do item!
+    </button>
+  </form>
+</main>
+`;
