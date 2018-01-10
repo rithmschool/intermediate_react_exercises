@@ -33,10 +33,10 @@ class Todo extends Component {
 		let buttonText = this.state.done ? "Mark as incomplete" : "Mark as complete";
 		let completedStyle = this.state.done ? "success" : "danger";
 		let buttonDecoration = this.state.done ? "line-through" : "none"
-		// let editForm = this.props.match.params.id ? 
-		// 	<button className='edit-button'>
-		// 		<Link to={`/todos/${this.props.id}/edit`}>Edit this todo</Link>
-		// 	</button> : null;
+		let editForm = this.props.match ? 
+			<button className='edit-button'>
+				<Link to={`/todos/${this.props.id}/edit`}>Edit this todo</Link>
+			</button> : null;
 
 		let styles = {
 			textDecoration: buttonDecoration
@@ -56,14 +56,14 @@ class Todo extends Component {
 
 		return(
 		  <ListGroupItem style={todoStyle} bsStyle={completedStyle}>
-		    {this.props.match}
+		    {/* {this.props.match && this.props.match.params.id && <button>Fooooo</button>} */}
 		    <h1 style={styles}><Link to={`/todos/${this.props.id}`}>{this.props.title}</Link></h1>
 		    <p> {this.props.description} </p>
 		    <button className='btn btn-warning' onClick={this.handleComplete}>{buttonText}</button>
 		    <br />
 		    <button className='btn btn-danger' onClick={this.handleDelete}>Delete this todo</button>
 		  	<br/>
-		  	<button className='edit-button'><Link to={`/todos/${this.props.id}/edit`}>Edit this todo</Link></button>
+		  	{editForm}
 		  </ListGroupItem>
 		)
 	}

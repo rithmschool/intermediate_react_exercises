@@ -92,7 +92,7 @@ class TodoList extends Component {
         title={todo.title} 
         description={todo.description}
         deleteTodo={this.handleDelete.bind(this, todo.id)}
-        // {...routeProps}
+        {...routeProps}
       />)
     }
 
@@ -114,7 +114,7 @@ class TodoList extends Component {
           <Row>
             <ul>
               <li>
-                <Link to='/'>Home</Link>
+                <Link className='pointer-link' to='/'>Home</Link>
               </li>
               <li>
                 <Link to='/todos'>See todos</Link>
