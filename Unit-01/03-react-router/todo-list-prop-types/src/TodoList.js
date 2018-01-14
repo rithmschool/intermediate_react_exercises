@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Todo from './Todo'
 import './TodoList.css'
 import NewTodoForm from './NewTodoForm'
+import { Route } from 'react-router-dom';
 
 
 class TodoList extends Component {
@@ -70,11 +71,14 @@ class TodoList extends Component {
 		})
 		return (
 			<div>
+				<Route 
+					path='/new/todo'
+					render={props => (
+						<NewTodoForm {...props} addTodo={this.handleAdd} />
+					)}
+				/>
 				<h1>TodoList!</h1>
-				<NewTodoForm addTodo={this.handleAdd}/>
-				<div className='todolist-container'>
-					{todos}
-				</div>
+				<Route exact path="/todos" component={() => <div>{todos}</div>} />
 			</div>
 		)
 	}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { Redirect } from 'react-router';
 
 class NewTodoForm extends Component {
 	constructor(props) {
@@ -7,7 +7,8 @@ class NewTodoForm extends Component {
 
     this.state = {
       title: '',
-      text: ''
+      text: '',
+      completed: false
     }
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,15 +20,17 @@ class NewTodoForm extends Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
+    this.props.addTodo(this.state);
     this.setState({
       title:'',
-      text: ''
+      text: '',
+      completed: true
     })
-	    this.props.addTodo(this.state);
 	}
 	
 	render() {
     return (
+      this.state.completed ? <Redirect to='/todos' /> :
       <div>
         <h4>Add a todo!</h4>
         <form onSubmit={this.handleSubmit}>
@@ -54,8 +57,6 @@ class NewTodoForm extends Component {
   }
 }
 
-NewTodoForm.propTypes = {
-  addTodo: PropTypes.func
-}
+
 
 export default NewTodoForm;
