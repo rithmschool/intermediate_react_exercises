@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Todo from './Todo'
+import Todo from './Todo';
+import PropTypes from 'prop-types';
 
 
 class EditForm extends Component {
@@ -39,6 +40,12 @@ class EditForm extends Component {
 			</form>
 		)
 	}
+}
+
+EditForm.propTypes = {
+	addEdits: PropTypes.func,
+	toggleEdit: PropTypes.func,
+	currentTodo: PropTypes.func
 }
 
 export default EditForm;

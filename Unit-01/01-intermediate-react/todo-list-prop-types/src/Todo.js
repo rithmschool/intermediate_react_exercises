@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Todo.css'
 import EditForm from './EditForm'
+import PropTypes from 'prop-types';
 
 class Todo extends Component {
 	constructor(props) {
@@ -59,6 +60,14 @@ class Todo extends Component {
 			)
 		}
 	}
+}
+
+Todo.propTypes = {
+	title: PropTypes.string,
+	text: PropTypes.string,
+	id: PropTypes.number,
+	removeTodo: PropTypes.func,
+	addEdits: PropTypes.func
 }
 
 export default Todo;

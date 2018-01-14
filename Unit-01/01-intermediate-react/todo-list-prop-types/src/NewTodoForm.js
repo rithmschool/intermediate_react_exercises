@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class NewTodoForm extends Component {
 	constructor(props) {
@@ -51,6 +52,10 @@ class NewTodoForm extends Component {
       </div>
     )
   }
+}
+
+NewTodoForm.propTypes = {
+  addTodo: PropTypes.func
 }
 
 export default NewTodoForm;
