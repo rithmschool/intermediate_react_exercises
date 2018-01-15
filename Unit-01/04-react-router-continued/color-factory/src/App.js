@@ -18,7 +18,8 @@ class App extends Component {
       ],
       toggled: false,
       name: '',
-      colorPick: false
+      colorPick: false,
+      currentColor: ''
     }
 
     this.toggleCheck = this.toggleCheck.bind(this);
@@ -30,7 +31,8 @@ class App extends Component {
 
   toggleCheck(e) {
     console.log(this.state.color)
-    this.setState({toggled: !this.state.toggled, name: e.name})
+
+    this.setState({toggled: !this.state.toggled, name: e.name, currentColor: e.colorVal})
   }
 
   handleGoBack(e) {
@@ -44,7 +46,7 @@ class App extends Component {
 
   addColor(e) {
     console.log('adding a color')
-    let newColor = {color: e.colorValue, name: e.colorName}
+    let newColor = {colorVal: e.colorVal, name: e.colorName}
     this.setState({
       color: [newColor, ...this.state.color]
     }, this.handleColorPick())
@@ -59,13 +61,14 @@ class App extends Component {
           key={idx}
           toggleCheck={this.toggleCheck}
           name={color.name}
+          colorVal={color.colorVal}
         />
       )
     })
 
     const style = {
       height: '100vh',
-      backgroundColor: this.state.color.colorVal
+      backgroundColor: this.state.currentColor
     }
 
     const nameAllCaps = this.state.name.toUpperCase();

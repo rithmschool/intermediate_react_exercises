@@ -8,7 +8,7 @@ class ColorForm extends Component {
 
 		this.state = {
 			colorName: '',
-			colorValue: ''
+			colorVal: ''
 		}
 
 		this.handleChange = this.handleChange.bind(this);
@@ -36,7 +36,7 @@ render() {
 		    	<label>Color Name</label>
 		    	<input name='colorName' onChange={this.handleChange}/>
 		    	<label>Color Value</label>
-		     	<input type='color' name='colorValue' onChange={this.handleChange}/>
+		     	<input type='color' name='colorVal' onChange={this.handleChange}/>
 		     	<input type='submit' value='Add Color' />
 		    </form>
   		</div>

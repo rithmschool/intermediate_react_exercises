@@ -7,7 +7,8 @@ class Color extends Component {
 		super(props);
 
 		this.state = {
-			name: ''
+			name: '',
+			colorVal: ''
 		}
 
 		this.handleClick = this.handleClick.bind(this);
@@ -16,7 +17,7 @@ class Color extends Component {
 
 	handleClick(e) {
 
-		this.setState({name: this.props.name}, () => {
+		this.setState({name: this.props.name, colorVal: this.props.colorVal}, () => {
 			this.props.toggleCheck(this.state);	
 		})
 		
