@@ -85,9 +85,9 @@ class App extends Component {
     //IF YOU CHOOSE TO ADD A NEW COLOR
     else if (this.state.colorPick === true) {
       return (
-        <ColorForm 
-          addColor={this.addColor}
-        />
+          <ColorForm 
+            addColor={this.addColor}
+          />
       )}
 
     //MAIN HOME PAGE
