@@ -14,11 +14,10 @@ class TodoApp extends Component {
 	      </h2>
 
 	      <h2>
-	      	<Link to='/new/todo'>Add Todo</Link>
+	      	<Link to='/todos/new'>Add Todo</Link>
 	      </h2>
 
 	      <Route path='/todos' component={TodoList} />
-	      <Route path='/new/todo' component={NewTodoForm} />
       </div>
     );
   }

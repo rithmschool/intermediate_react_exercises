@@ -20,17 +20,17 @@ class NewTodoForm extends Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
-    this.props.addTodo(this.state);
     this.setState({
       title:'',
       text: '',
       completed: true
     })
+    this.props.addTodo(this.state);
 	}
 	
 	render() {
     return (
-      this.state.completed ? <Redirect to='/todos' /> :
+      this.state.completed ? <Redirect to='/todos' /> : 
       <div>
         <h4>Add a todo!</h4>
         <form onSubmit={this.handleSubmit}>

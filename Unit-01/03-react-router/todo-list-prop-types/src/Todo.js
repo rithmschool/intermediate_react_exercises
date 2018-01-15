@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Todo.css'
 import EditForm from './EditForm'
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 class Todo extends Component {
 	constructor(props) {
@@ -20,12 +21,11 @@ class Todo extends Component {
 
   	editTodo(e) {
   		this.setState({
-  			edit: !this.state.edit
+  			edit: true
   		})
   	}
 
   	toggleEdit(e) {
-  		console.log('in toggle')
   		this.setState({
   			edit: false
   		})
@@ -47,7 +47,7 @@ class Todo extends Component {
 					</div>
 					<button onClick={this.props.removeTodo}>X</button>
 					<button style={style} onClick={this.completeTodo}>Mark Complete</button>
-					<button onClick={this.editTodo}>Edit</button>
+					<Link to={`/todos/${this.props.id}/edit`}> <button onClick={this.editTodo}>Edit</button> </Link>
 				</div>
 			)
 			} 

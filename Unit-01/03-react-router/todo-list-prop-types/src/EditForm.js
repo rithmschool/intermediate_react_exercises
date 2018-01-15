@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Todo from './Todo';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router';
 
 
 class EditForm extends Component {
@@ -9,7 +11,8 @@ class EditForm extends Component {
 		this.state = {
 			position: this.props.id,
 			title: '',
-			text: ''
+			text: '',
+			completed: false
 		}
 
 		this.handleChange = this.handleChange.bind(this);
@@ -24,28 +27,31 @@ class EditForm extends Component {
 
 	editFormSubmit(e) {
 		e.preventDefault();
-		
-
+		this.setState({
+			completed: true
+		})
 		this.props.addEdits(this.state);
-		this.props.toggleEdit(this.state);
 	}
 
 	render() {
 		return(
-			<form onSubmit={this.editFormSubmit}>
-				<label>Edit Todo</label>
-				<input onChange={this.handleChange} name='title' placeholder={this.props.currentTodo.title} />
-				<input onChange={this.handleChange} name='text' placeholder={this.props.currentTodo.text} />
-				<input type='submit' value='Submit Edit' />
-			</form>
+			this.state.completed ? <Redirect to='/todos' /> :
+			<div>
+				<form onSubmit={this.editFormSubmit}>
+					<label>Edit Todo</label>
+					<input onChange={this.handleChange} name='title' placeholder={this.props.currentTodo.title} />
+					<input onChange={this.handleChange} name='text' placeholder={this.props.currentTodo.text} />
+					<input type='Submit' value='Submit Edit' />
+				</form>
+			</div>
 		)
 	}
 }
 
-EditForm.propTypes = {
-	addEdits: PropTypes.func,
-	toggleEdit: PropTypes.func,
-	currentTodo: PropTypes.func
-}
+// EditForm.propTypes = {
+// 	addEdits: PropTypes.func,
+// 	toggleEdit: PropTypes.func,
+// 	currentTodo: PropTypes.func
+// }
 
 export default EditForm;

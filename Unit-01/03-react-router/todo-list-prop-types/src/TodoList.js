@@ -3,6 +3,7 @@ import Todo from './Todo'
 import './TodoList.css'
 import NewTodoForm from './NewTodoForm'
 import { Route } from 'react-router-dom';
+import EditForm from './EditForm';
 
 
 class TodoList extends Component {
@@ -42,7 +43,6 @@ class TodoList extends Component {
 
 
 	addEdits(e) {
-  		console.log(e);
 
   		const editTodos = this.state.todos.map((todo,idx) => {
   			if (idx === e.position) {
@@ -69,14 +69,41 @@ class TodoList extends Component {
 				/>
 			)
 		})
+
 		return (
 			<div>
 				<Route 
-					path='/new/todo'
+					path='/todos/new' 
 					render={props => (
-						<NewTodoForm {...props} addTodo={this.handleAdd} />
-					)}
-				/>
+            			<NewTodoForm {...props} addTodo={this.handleAdd} />
+          		)} />
+
+				<Route 
+					exact path='/todos/:id' 
+					render={props =>
+            			todos.find(t => t.props.id === +props.match.params.id) || null}
+        		/>
+
+
+				<Route 
+					exact path='/todos/:id/edit' 
+					render={props => {
+						let todo =
+          					todos.find(t => t.props.id === +props.match.params.id) || null;
+          				return (
+          					<EditForm 
+          						{...props}
+								currentTodo={{title: todo.props.title, text: todo.props.text}}
+          						title={todo.props.title}
+          						text={todo.props.text}
+          						id={todo.props.id}
+          						addEdits={this.addEdits}
+          					/>
+          				)
+          			}}
+              	/>
+
+
 				<h1>TodoList!</h1>
 				<Route exact path="/todos" component={() => <div>{todos}</div>} />
 			</div>
