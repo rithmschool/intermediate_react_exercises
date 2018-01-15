@@ -6,18 +6,27 @@ class Color extends Component {
 	constructor(props) {
 		super(props);
 
+		this.state = {
+			name: ''
+		}
+
+		this.handleClick = this.handleClick.bind(this);
 
 	}
 
+	handleClick(e) {
+
+		this.setState({name: this.props.name}, () => {
+			this.props.toggleCheck(this.state);	
+		})
+		
+	}
 
 	render() {
-		const style = {
-			backgroundColor: 'red'
-		}
+		
 		return(
-			<div style={style}>
-				<h1>We are in the Color!! {this.props.name}</h1>
-				<p>{this.props.name}</p>
+			<div>
+				<button onClick={this.handleClick}>{this.props.name}</button>
   			</div>
 		)
 	}
