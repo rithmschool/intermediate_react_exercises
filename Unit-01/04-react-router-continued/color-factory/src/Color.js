@@ -16,7 +16,7 @@ class Color extends Component {
 	}
 
 	handleClick(e) {
-
+		console.log(this.props.name + ' ' + this.props.colorVal)
 		this.setState({name: this.props.name, colorVal: this.props.colorVal}, () => {
 			this.props.toggleCheck(this.state);	
 		})
@@ -27,10 +27,21 @@ class Color extends Component {
 		
 		return(
 			<div>
-				<button onClick={this.handleClick}>{this.props.name}</button>
-  			</div>
+              <h1>THIS IS .</h1>
+              <h1>ISN'T IT BEAUTIFUL?</h1>
+              <button>GO BACK</button>
+            </div>
 		)
 	}
 } 
  
 export default Color;
+
+
+// <Color 
+        //   key={idx}
+        //   id={idx}
+        //   toggleCheck={this.toggleCheck}
+        //   name={color.name}
+        //   colorVal={color.colorVal}
+        // />

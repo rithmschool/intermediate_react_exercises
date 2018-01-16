@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router';
 
 
 
@@ -8,7 +10,8 @@ class ColorForm extends Component {
 
 		this.state = {
 			colorName: '',
-			colorVal: ''
+			colorVal: '',
+			completed: false
 		}
 
 		this.handleChange = this.handleChange.bind(this);
@@ -24,20 +27,23 @@ class ColorForm extends Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
-		console.log(e.target)
 		this.props.addColor(this.state)
+		this.setState({
+			completed: !this.state.completed
+		})
 	}
 
 render() {
 	return (
+		this.state.completed ? <Redirect to='/colors' /> :
 		<div>
 		  <h1>Test</h1>
-		    <form onSubmit={this.handleSubmit}>
+		    <form>
 		    	<label>Color Name</label>
 		    	<input name='colorName' onChange={this.handleChange}/>
 		    	<label>Color Value</label>
 		     	<input type='color' name='colorVal' onChange={this.handleChange}/>
-		     	<input type='submit' value='Add Color' />
+		     	<Link to={`/colors`}><input type='submit' value='Add Color' onClick={this.handleSubmit} /></Link>
 		    </form>
   		</div>
 	)
