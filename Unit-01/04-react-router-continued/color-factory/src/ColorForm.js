@@ -10,7 +10,7 @@ class ColorForm extends Component {
 
 		this.state = {
 			colorName: '',
-			colorVal: '',
+			colorVal: '#6bd395',
 			completed: false
 		}
 
@@ -33,23 +33,23 @@ class ColorForm extends Component {
 		})
 	}
 
-render() {
-	return (
-		this.state.completed ? <Redirect to='/colors' /> :
-		<div>
-		  <h1>Test</h1>
-		    <form>
-		    	<label>Color Name</label>
-		    	<input name='colorName' onChange={this.handleChange}/>
-		    	<label>Color Value</label>
-		     	<input type='color' name='colorVal' onChange={this.handleChange}/>
-		     	<Link to={`/colors`}><input type='submit' value='Add Color' onClick={this.handleSubmit} /></Link>
-		    </form>
-  		</div>
-	)
-}
+	render() {
+		return (
+			this.state.completed ? <Redirect to='/colors' /> :
+				<div>
+					<h1>Test</h1>
+					<form>
+						<label>Color Name</label>
+						<input name='colorName' onChange={this.handleChange} />
+						<label>Color Value</label>
+						<input type='color' name='colorVal' onChange={this.handleChange} />
+						<Link to={`/colors`}><input type='submit' value='Add Color' onClick={this.handleSubmit} /></Link>
+					</form>
+				</div>
+		)
+	}
 
-} 
+}
 
 
 export default ColorForm;

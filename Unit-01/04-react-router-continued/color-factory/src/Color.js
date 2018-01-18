@@ -11,37 +11,20 @@ class Color extends Component {
 			colorVal: ''
 		}
 
-		this.handleClick = this.handleClick.bind(this);
-
-	}
-
-	handleClick(e) {
-		console.log(this.props.name + ' ' + this.props.colorVal)
-		this.setState({name: this.props.name, colorVal: this.props.colorVal}, () => {
-			this.props.toggleCheck(this.state);	
-		})
-		
 	}
 
 	render() {
-		
-		return(
-			<div>
-              <h1>THIS IS .</h1>
-              <h1>ISN'T IT BEAUTIFUL?</h1>
-              <button>GO BACK</button>
-            </div>
+		const style = {
+			height: '100vh',
+			backgroundColor: `${this.props.colorVal}`
+		}
+		return (
+			<div style={style}>
+				<h1>THIS IS {this.props.colorName.toUpperCase()}.</h1>
+				<h1>ISN'T IT BEAUTIFUL?</h1>
+			</div>
 		)
 	}
-} 
- 
+}
+
 export default Color;
-
-
-// <Color 
-        //   key={idx}
-        //   id={idx}
-        //   toggleCheck={this.toggleCheck}
-        //   name={color.name}
-        //   colorVal={color.colorVal}
-        // />
